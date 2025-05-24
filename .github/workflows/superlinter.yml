@@ -14,10 +14,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: 24f1002079@ds.study.iitm.ac.in
-        run: echo "Hello, world!"  
+        uses: actions/checkout@v4 
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
@@ -31,7 +28,10 @@ jobs:
           with open('iss-location.jsonl', 'a') as f:
               f.write(data + '\n')
           'EOF'
-
+          
+      - name: 24f1002079@ds.study.iitm.ac.in
+        run: echo "Hello, world!" 
+        
       - name: Commit and push changes
         run: | # shell
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
